@@ -1,0 +1,33 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-sm {
+    background-color: #FCE5D8;
+}
+
+.formulario {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    .campo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        color:#412A4C;
+        label {
+            flex: 0 0 10rem;
+        }
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background-color: #FFEBBD;
+            color:#412A4C;
+        }
+    }
+}
+
+.acciones {
+    padding: 1rem;
+}

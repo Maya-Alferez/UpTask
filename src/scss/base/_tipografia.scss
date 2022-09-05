@@ -18,3 +18,21 @@ p {
     font-size: 2rem;
     line-height: 1.8;
 }
+
+.descripcion-pagina {
+    text-align: center;
+}
+
+.tagline {
+    font-family: v.$fuente_headings;
+    font-weight: 900;
+    color:#412A4C;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.contenedor-sm {
+    .descripcion-pagina {
+        color: #E57CD8;
+    }
+}

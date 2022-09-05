@@ -1,6 +1,6 @@
 <div class="contenedor">
     <h1>CatTrello</h1>
-    <p>Crea y administra tus proyectos</p>
+    <p class="tagline">Crea y administra tus proyectos</p>
 
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Log in to your account</p>
