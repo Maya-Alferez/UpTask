@@ -1,14 +1,14 @@
-<div class="contenedor olvide">
+<div class="contenedor reestablecer">
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
-        <p class="descripcion-pagina">Dang, forgot your password, eh?</p>
-        <form class="formulario" method="POST" action="/olvide">
+        <p class="descripcion-pagina">Reset password</p>
+        <form class="formulario" method="POST" action="/reestablecer">
             <div class="campo">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email" name="email">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="New password" name="password">
             </div>
 
-            <input type="submit" class="boton" value="Reset password">
+            <input type="submit" class="boton" value="Resend email ">
         </form>
         <div class="acciones">
             <a href="/">Already have an account? Log in here</a>

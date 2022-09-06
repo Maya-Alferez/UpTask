@@ -1,17 +1,16 @@
-@use 'base/variables' as v;
 @use 'base/mixins' as m;
+@use 'base/variables' as v;
 
-.olvide {
+.reestablecer {
     margin-top: 3rem;
 
     .contenedor-sm {
         .descripcion-pagina {
-            color:lighten(#FF897A, 5%);
+            color:lighten(#613263, 5%);
         }
     }
-    
     .uptask {
-        background: linear-gradient(to right, #FF897A 30%, lighten(#FF897A, 80%) 100%);
+        background: linear-gradient(to right, #613263 50%, lighten(#613263, 80%) 100%);
         color: transparent;
         background-clip: text;
         font-size: 6rem;
@@ -24,11 +23,7 @@
 
     input[type="submit"] {
         border-radius: 2.6rem;
-        @include m.boton(#FF897A, v.$blanco);
-        &:hover {
-        background-color: lighten( #FF897A, 5% );
-        cursor: pointer;
-        }
+        @include m.boton(#613263, v.$blanco);
     }
 
     .acciones {
@@ -36,7 +31,7 @@
             color:#412A4C;
             &:hover {
                 cursor: pointer;
-                color:#FF897A;
+                color:#E57CD8;
             }
         }
     }
