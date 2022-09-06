@@ -51,8 +51,11 @@ class LoginController {
         ]);
     }
 
-    public static function mensaje() {
-        echo "Revisa tu correo electrónico";
+    public static function mensaje(Router $router) {
+        $router->render('auth/mensaje' , [
+        'titulo' => 'Forgot password'
+    ]);
+
     }
 
     public static function confirmar() {

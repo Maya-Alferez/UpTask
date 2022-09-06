@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.mensaje {
+    margin-top: 3rem;
+    text-align: center;
+
+    .tagline {
+        font-size: 2rem;
+    }
+
+    .contenedor-sm {
+        background-color: #FFF3ED;
+        .descripcion-pagina {
+            color:darken(#98E67C, 10%);
+        }
+    }
+
+    .uptask {
+        @include m.textoDegradado(#98E67C);
+    }
+}
