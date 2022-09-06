@@ -1,7 +1,7 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 
-.crear {
+.login {
     margin-top: 3rem;
     .uptask {
         background: linear-gradient(to right, #E57CD8 0%, darken(#E57CD8, 30%) 100%);
@@ -14,4 +14,21 @@
             font-size: 7.5rem;
         }
     }
+
+    input[type="submit"] {
+        border-radius: 2.6rem;
+        @include m.boton(#E57CD8, v.$blanco);
+    }
+
+    .acciones {
+        a {
+            color:rgb(65, 42, 76);
+            &:hover {
+                cursor: pointer;
+                color:#E57CD8;
+            }
+        }
+    }
 }
+
+

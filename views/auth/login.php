@@ -1,4 +1,4 @@
-<div class="contenedor crear">
+<div class="contenedor login">
     <h1 class="uptask">CatTrello</h1>
     <p class="tagline">Crea y administra tus proyectos</p>
 
