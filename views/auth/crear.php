@@ -2,7 +2,7 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Sign up for a CatTrello account</p>
-        <form class="formulario" method="POST" action="/">
+        <form class="formulario" method="POST" action="/crear">
             <div class="campo">
                 <label for="nombre">Name</label>
                 <input type="text" id="nombre" placeholder="Name" name="nombre">
@@ -20,7 +20,7 @@
                 <input type="password" id="password2" placeholder="Repeat your password" name="password2">
             </div>
 
-            <input type="submit" class="boton" value="Sign up with email">
+            <input type="submit" class="boton" value="Create an account">
         </form>
         <div class="acciones">
             <a href="/">Already have an account? Log in here</a>
