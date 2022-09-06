@@ -1,7 +1,5 @@
 <div class="contenedor login">
-    <h1 class="uptask">CatTrello</h1>
-    <p class="tagline">Crea y administra tus proyectos</p>
-
+    <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Log in to your account</p>
         <form class="formulario" method="POST" action="/">
