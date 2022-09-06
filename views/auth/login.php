@@ -1,5 +1,5 @@
-<div class="contenedor">
-    <h1>CatTrello</h1>
+<div class="contenedor crear">
+    <h1 class="uptask">CatTrello</h1>
     <p class="tagline">Crea y administra tus proyectos</p>
 
     <div class="contenedor-sm">
