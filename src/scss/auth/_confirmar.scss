@@ -1,0 +1,23 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.confirmar {
+    margin-top: 3rem;
+
+    .contenedor-sm {
+        background-color: #FFF3ED;
+    }
+
+    .uptask {
+        @include m.textoDegradado(#E57CD8);
+    }
+
+    .acciones {
+        justify-content: center;
+        
+        .boton {
+            @include m.boton(#E57CD8, v.$blanco);
+            border-radius: 2.4rem;
+        }
+    }
+}

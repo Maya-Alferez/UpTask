@@ -58,7 +58,9 @@ class LoginController {
 
     }
 
-    public static function confirmar() {
-        echo "confirmar";
+    public static function confirmar(Router $router) {
+        $router->render('auth/confirmar', [
+            'titulo' => 'Confirm your account CatTrello'
+        ]);
     }
 }
