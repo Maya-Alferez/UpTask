@@ -1,15 +1,22 @@
-@use 'base/mixins' as m;
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 
-.login {
+.crear {
     margin-top: 3rem;
+
+    .contenedor-sm {
+        .descripcion-pagina {
+            color:darken(#B777F2, 10%);
+        }
+    }
+    
     .uptask {
-        @include m.textoDegradado(#E57CD8);
+        @include m.textoDegradado(#B777F2);
     }
 
     input[type="submit"] {
         border-radius: 2.6rem;
-        @include m.boton(#E57CD8, v.$blanco);
+        @include m.boton(#B777F2, v.$blanco);
     }
 
     .acciones {
@@ -17,10 +24,8 @@
             color:rgb(65, 42, 76);
             &:hover {
                 cursor: pointer;
-                color:#E57CD8;
+                color:#B777F2;
             }
         }
     }
 }
-
-
