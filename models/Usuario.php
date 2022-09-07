@@ -12,6 +12,7 @@ class Usuario extends ActiveRecord {
         $this->nombre = $args['nombre'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
+        $this->password2 = $args['password2'] ?? '';
         $this->token = $args['token'] ?? '';
         $this->confirmado = $args['confirmado'] ?? '';
     }
@@ -24,6 +25,18 @@ class Usuario extends ActiveRecord {
 
         if(!$this->email) {
             self::$alertas['error'][] =  "User's email is required";
+        }
+
+        if(!$this->password) {
+            self::$alertas['error'][] =  "Password user is required";
+        }
+
+        if(strlen($this->password) < 6) {
+            self::$alertas['error'][] =  "Please, make sure that your password includes 6 or more characters";
+        }
+
+        if($this->password !== $this->password2) {
+            self::$alertas['error'][] = "Please, make sure that both passwords are the same";
         }
 
         return self::$alertas;
