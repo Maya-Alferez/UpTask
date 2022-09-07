@@ -2,6 +2,7 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Sign up for a CatTrello account</p>
+        <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
         <form class="formulario" method="POST" action="/crear">
             <div class="campo">
                 <label for="nombre">Name</label>
