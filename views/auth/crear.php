@@ -5,11 +5,11 @@
         <form class="formulario" method="POST" action="/crear">
             <div class="campo">
                 <label for="nombre">Name</label>
-                <input type="text" id="nombre" placeholder="Name" name="nombre">
+                <input type="text" id="nombre" placeholder="Name" name="nombre" value="<?php echo $usuario->nombre; ?>">
             </div>
             <div class="campo">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email" name="email">
+                <input type="email" id="email" placeholder="Email" name="email" value="<?php echo $usuario->email; ?>">
             </div>
             <div class="campo">
                 <label for="password">Password</label>
