@@ -33,7 +33,18 @@ class LoginController {
                     Usuario::setAlerta('error', "User already exists");
                     $alertas = Usuario::getAlertas();
                 } else {
-                    //Si el usuario no existe, entonces se debe de crear el usuario
+                    //Hashear password
+                    $usuario->hashPassword();
+                    //Eliminar password2 para que este no se vaya a la BD
+                    unset($usuario->password2);
+                    //General token
+                    $usuario->crearToken();
+
+                    //Crear nuevo usuario
+                    $resultado = $usuario->guardar();
+                    if($resultado) {
+                        header('Location: /mensaje');
+                    }
                 }
             }
         }
