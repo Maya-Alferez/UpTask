@@ -70,7 +70,24 @@ class LoginController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usuario = new Usuario($_POST);
             $alertas = $usuario->validarEmail();
+            
+            if(empty($alertas)) {
+                $usuario = Usuario::where('email', $usuario->email);
+                if($usuario && $usuario->confirmado === '1') {
+                    //Generar un nuevo token
+                    $usuario->crearToken();
+                    unset($usuario->password2);
+                    //Actualizar al usuario
+                    $usuario->guardar();
+                    //Imprimir alerta
+                    Usuario::setAlerta('exito', 'Check your email for instructions');
+                } else { 
+                    Usuario::setAlerta('error', 'Username does not exist or is not confirmed');
+                }
+            }
         }
+
+        $alertas = Usuario::getAlertas();
 
         //Render a la vista
         $router->render('auth/olvide', [
