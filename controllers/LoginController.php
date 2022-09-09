@@ -79,6 +79,9 @@ class LoginController {
                     unset($usuario->password2);
                     //Actualizar al usuario
                     $usuario->guardar();
+                    //Enviar email
+                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    $email->enviarInstrucciones();
                     //Imprimir alerta
                     Usuario::setAlerta('exito', 'Check your email for instructions');
                 } else { 
@@ -97,14 +100,26 @@ class LoginController {
     }
 
     public static function reestablecer(Router $router) {
+        $token = s($_GET['token']);
+        $mostrar = true;
+        if(!$token) header('Location: /');
+
+        //Identificar al usuario con el token generado
+        $usuario = Usuario::where('token', $token);
+        if(empty($usuario)) {
+            Usuario::setAlerta('error', 'Invalid token');
+            $mostrar = false;
+        }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         }
-
+        $alertas = Usuario::getAlertas();
         //Render a la vista
         $router->render('auth/reestablecer', [
-            'titulo' => 'Reset password'
+            'titulo' => 'Reset password',
+            'alertas' => $alertas,
+            'mostrar' => $mostrar
         ]);
     }
 

@@ -2,6 +2,8 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Reset password</p>
+        <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
+        <?php if($mostrar) { ?>
         <form class="formulario" method="POST" action="/reestablecer">
             <div class="campo">
                 <label for="password">Password</label>
@@ -10,6 +12,7 @@
 
             <input type="submit" class="boton" value="Resend email ">
         </form>
+        <?php } ?>
         <div class="acciones">
             <a href="/">Already have an account? Log in here</a>
             <a href="/crear">Don't have an account?, Sign up for free</a>
