@@ -93,8 +93,31 @@ class LoginController {
     }
 
     public static function confirmar(Router $router) {
+        $token = s($_GET['token']);
+        if(!$token) header('Location: /');
+
+        //Encontrar al usuario con el token generado
+        $usuario = Usuario::where('token', $token);
+
+        if(empty($usuario)) {
+            //No se encontró un usuario con ese token
+            Usuario::setAlerta('error', 'Invalid token');
+        } else {
+            //Confirmar cuenta
+            $usuario->confirmado = 1;
+            $usuario->token = null;
+            unset($usuario->password2);
+            
+            //Guardar datos en la BD
+            $usuario->guardar();
+            Usuario::setAlerta('exito', 'Account verified successfully');
+        }
+
+        $alertas = Usuario::getAlertas();
+
         $router->render('auth/confirmar', [
-            'titulo' => 'Confirm your account CatTrello'
+            'titulo' => 'Confirm your account CatTrello',
+            'alertas' => $alertas
         ]);
     }
 }
