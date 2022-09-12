@@ -6,13 +6,21 @@ use Model\Usuario;
 
 class LoginController {
     public static function login(Router $router) {
-
+       
+        $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $auth = new Usuario($_POST);
+            $alertas = $auth->validarLogin();
+
+            if(empty($alertas)) {
+                //Verificar que el usuario exista.
+            }
         }
 
         //Render a la vista
         $router->render('auth/login', [
-            'titulo' => 'Iniciar sesión'
+            'titulo' => 'Iniciar sesión',
+            'alertas' => $alertas
         ]);
     }
 
