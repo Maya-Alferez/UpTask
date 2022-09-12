@@ -112,9 +112,20 @@ class LoginController {
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //Añadir nuevo password
+            $usuario->sincronizar($_POST);
 
+            //Validar nuevo password
+            $alertas = $usuario->validarPassword();
+
+            if(empty($alertas)) {
+                //Hashear nuevo password
+                debuguear($usuario);
+            }
         }
+
         $alertas = Usuario::getAlertas();
+
         //Render a la vista
         $router->render('auth/reestablecer', [
             'titulo' => 'Reset password',
