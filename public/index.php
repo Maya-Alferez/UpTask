@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
 use Controllers\LoginController;
+use Controllers\DashboardController;
 $router = new Router();
 
 //Login
@@ -25,6 +26,9 @@ $router->post('/reestablecer', [LoginController::class, 'reestablecer']);
 //Confirmación de cuenta
 $router->get('/mensaje', [LoginController::class, 'mensaje']); //Aqui le indicamos al usuario que confirme su cuenta en su email.
 $router->get('/confirmar', [LoginController::class, 'confirmar']); //Mientras que aquí se genera el token para verificar si el usuario si confimó su cuenta desde su email.
+
+//Zona de proyectos
+$router->get('/dashboard', [DashboardController::class, 'index']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
