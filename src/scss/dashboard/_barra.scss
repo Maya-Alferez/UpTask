@@ -23,9 +23,10 @@
     }
 
     .cerrar-sesion {
-        @include m.boton( darken(#D164C5, 10%), #FDE5DC);
+        @include m.boton( darken(#DD6FD1, 10%), #FDE5DC);
         font-size: 1.2rem;
         padding: 1rem;
         border-radius: 0.5rem;
+        text-transform: uppercase;
     }
 }

@@ -2,8 +2,8 @@
     <h2>CatTrello</h2>
 
     <nav class="sidebar-nav">
-        <a href="/dashboard">Projects</a>
-        <a href="/crear-proyecto">Create a new project</a>
-        <a href="/perfil">Profile</a>
+        <a class="<?php echo ($titulo === 'Projects') ? 'activo' : ''; ?>" href="/dashboard">Projects</a>
+        <a class="<?php echo ($titulo === 'Create a new project') ? 'activo' : '';?>" href="/crear-proyecto">Create a new project</a>
+        <a class="<?php echo ($titulo === 'Profile') ? 'activo' : '';?>" href="/perfil">Profile</a>
     </nav>
 </aside>
