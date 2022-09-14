@@ -23,10 +23,9 @@
     }
 
     .cerrar-sesion {
-        @include m.boton( darken(#DD6FD1, 10%), #FDE5DC);
-        font-size: 1.2rem;
+        @include m.boton(rgb(221, 111, 209), v.$blanco);
+        font-size: 1.4rem;
         padding: 1rem;
         border-radius: 0.5rem;
-        text-transform: uppercase;
     }
 }
