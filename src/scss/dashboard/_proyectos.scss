@@ -1,0 +1,60 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.panel {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(235 231 235 / 50%) 0px 6px 8px 0px;
+    border-radius: 24px;
+    width: min(664px, 100% - 50px);
+    height: 462px;
+    margin: 80px auto 0px;
+    .no-proyectos {
+        a {
+            @include m.boton(rgb(221, 111, 209), v.$blanco);
+            font-size: 1.4rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+    }
+}
+
+.listado-proyectos {
+    list-style: none;
+    padding: 0;
+    margin-top: 5rem;
+    @include m.grid(1, 2rem);
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+    @include m.desktop {
+        @include m.grid(3, 2rem);
+    }
+
+    .proyecto {
+        background-color: lighten(rgb(221, 111, 209), 25%);
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        line-height: 2;
+        border-radius: 1rem;
+    
+        &:hover {
+            background-color: darken(rgb(221, 111, 209), 3%);
+        }
+
+        a {
+            color: #2C1338;
+            text-transform: uppercase;
+        }
+    }
+
+}
