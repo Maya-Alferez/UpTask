@@ -11,3 +11,88 @@
         font-size: 1.4rem;
     }
 }
+
+.listado-tareas {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+    text-align: center;
+
+    .spider {
+        background: url(https://web-assets.toggl.com/app/assets/images/c59e1c1e9317e2d8.png) center top / contain no-repeat;
+        height: 25rem;
+        width: 20rem;
+        transform-origin: 50% 10%;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+
+    .no-tareas {
+        text-align: center;
+        font-size: 2.4rem;
+    }
+}
+
+.tarea {
+    padding: .5rem 2rem;
+    border-bottom: 2px solid darken(#E8BDE4, 5%);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-of-type {
+        border: none;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .opciones {
+
+        display: flex;
+        gap: 1rem;
+
+        button {
+            border: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .complete {
+            background-color: #D6ECD2;
+            color: #7BC86C;
+            &:hover {
+                background-color: #B7DDB0;
+                color: #5AAC44;
+            }
+        }
+        
+
+        .pending {
+            background-color: #FCE6C6;
+            color: #FFAF3F;
+            &:hover {
+                background-color: #FAD29C;
+                color: #E79217;
+            }
+        }
+
+        .eliminar-tarea {
+            background-color: #F5D3CD;
+            color: #EF7564;
+            &:hover {
+                background-color: #EFB3AB;
+                color: #CF513D;
+            }
+        }
+    }
+}
