@@ -41,4 +41,11 @@
         }
             
     }
+
+    .enlace {
+        color:#D164C5;
+        &:hover {
+            color: lighten(#D164C5, 20%);
+        }
+    }
 }
