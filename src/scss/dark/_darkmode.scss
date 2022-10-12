@@ -1,0 +1,132 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+@media (prefers-color-scheme: dark) {
+    $grisOscuro: #2C2C3B;
+
+    body {
+        background-color: $grisOscuro;
+
+        .contenedor-sm {
+            background-color: $grisOscuro;
+            
+            .descripcion-pagina {
+                color: #F3F4F6;
+            }
+        }
+    }
+
+    .tagline, 
+    .formulario .campo,
+    .login .acciones a,
+    .crear .acciones a,
+    .olvide .acciones a {
+        color: v.$blanco;
+        input {
+            background-color: #F3F4F6;
+        }
+    }
+
+    .alerta.error {
+        background-color: v.$blanco;
+    }
+
+    .sidebar {
+        .sidebar-nav {
+            a {
+                color: v.$blanco;
+                &.activo,
+                &:hover {
+                    background-color: #dd6fd1;
+                }
+            }
+        }
+        @include m.tablet {
+            background-color: darken($grisOscuro, 5%);
+        }
+    }
+
+    .barra-mobile,
+    .barra {
+        background-color: darken($grisOscuro, 10%);
+    }
+
+    .barra {
+        p {
+            color: v.$blanco;
+            span {
+                color: #DD6FD1;
+            }
+        }
+    }
+
+    .filtros {
+        background-color: lighten($grisOscuro, 10%);
+        h2, label {
+            color: v.$blanco;
+        }
+
+        input[type="radio"] {
+            accent-color: #dd6fd1;
+        }
+    }
+
+    .dashboard {
+        background-color: $grisOscuro;
+
+        .contenido .contenedor-sm {
+            background-color: $grisOscuro;
+        }
+
+        .nombre-pagina {
+            color: #F3F4F6;
+        }
+    }
+
+    .listado-proyectos .proyecto {
+        background-color: lighten($grisOscuro, 40%);
+        a {
+            color: v.$blanco;
+        }
+    }
+
+    .listado-tareas .tarea {
+        background-color: lighten($grisOscuro, 10%);
+        border: none;
+
+        p {
+            color: v.$blanco;
+        }
+    }
+
+    .tarea .opciones .pending {
+        background-color: #FFAF3F;
+        color: v.$blanco;
+    }
+
+    .tarea .opciones .eliminar-tarea {
+        background-color: #EF7564;
+        color: v.$blanco;
+    }
+
+    .tarea .opciones .complete {
+        background-color: #7BC86C;
+        color: v.$blanco;
+    }
+
+    .modal .formulario {
+        background-color: $grisOscuro;
+        input[type="text"] {
+            background-color: lighten($grisOscuro, 20%);
+            border: none;
+            color: v.$blanco;
+            &::placeholder {
+                color:darken(#F3F4F6, 20%);
+            }
+        }
+        
+        legend {
+            color: v.$blanco;
+        }
+    }
+}
